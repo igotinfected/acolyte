@@ -1,0 +1,68 @@
+[MASTER]
+
+# Ignore auto-generated directories/files, setup/config files not necessarily related to
+# the project and other similar things.
+ignore=env,.venv
+
+# Comma-separated list of packages/modules that are allowed to load C extensions
+# Avoids no-member linting issue.
+extension-pkg-whitelist=pydantic
+
+# Comma-separated list of pylint plugins to load.
+load-plugins=
+
+# When enabled, pylint would attempt to guess common misconfiguration and emit
+# user-friendly hints instead of false-positive error messages.
+suggestion-mode=yes
+
+[MESSAGES CONTROL]
+
+# Comma-separated list of warnings to disable
+disable=bad-continuation, # black takes care of this
+        too-few-public-methods, # we are working with loads of models that have none
+
+# Comma-separated list of warnings to enable
+enable=useless-suppression
+
+[REPORTS]
+
+# Easily tell errors from warnings
+output-format=colorized
+
+# Full report (yes) or only messages (no)
+reports=no
+
+# Score at the end
+score=yes
+
+[TYPECHECK]
+
+# Don't complain when accessing members of these modules
+ignored-modules=
+
+# Don't complain about dynamically generated stuff.
+generated-members=
+
+[FORMAT]
+
+# Black's default line length.
+max-line-length=88
+
+[IMPORTS]
+
+# Force import order to recognize modules as part of third party library.
+known-third-party=
+
+[SIMILARITIES]
+
+# minimum lines to consider similarity
+min-similarity-lines=10
+
+# ignore similarities regarding comments
+ignore-comments=yes
+
+# ignore similarities regarding docstrings
+ignore-docstrings=yes
+
+# ignore similarities regarding imports
+ignore-imports=yes
